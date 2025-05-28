@@ -1,11 +1,11 @@
 {
-  "name": "Your Name",
-  "label": "Optional Label",
-  "image_path": "img/default-image.png",
+  "name": "Max Lan",
+  "label": "ECE Student UW-Seattle",
+  "image_path": "img/profile.png",
   "contact": {
-    "email": "FirstLast@Sample.com",
-    "phone": "123-456-7890",
-    "location": "City, State, Country"
+    "email": "ml248@uw.edu",
+    "phone": "415-264-6023",
+    "location": "Seattle, Washington, United States"
   },
   "summary": "A short summary of who you are, your background, experience, and interests to give visitors a quick introduction to you.",
   "base_url": "127.0.0.1:5500",
@@ -28,11 +28,11 @@
   ],
   "work_experience": [
     {
-      "company": "Latest Job",
-      "position": "Position One",
+      "company": "Asia Vital Components",
+      "position": "Firmware Engineering Intern",
       "url": "https://sample.com",
-      "start_date": "01/01/2020",
-      "end_date": "Present",
+      "start_date": "07/01/2025",
+      "end_date": "09/12/2025",
       "summary": "Short summary about present job and what the position entails",
       "highlights": [
         "First Duty of Current Job",
