@@ -1,7 +1,7 @@
 {
   "name": "Max Lan",
   "label": "ECE Student UW-Seattle",
-  "image_path": "img/profile.png",
+  "image_path": "img/IMG_3948.png",
   "contact": {
     "email": "ml248@uw.edu",
     "phone": "415-264-6023",
@@ -104,57 +104,17 @@
       ]
     }
   ],
-  "volunteer_experience": [
-    {
-      "organization": "Latest Organization",
-      "position": "Position One",
-      "url": "https://sample.com",
-      "start_date": "01/01/2020",
-      "end_date": "Present",
-      "summary": "Short summary about present volunteer work",
-      "highlights": [
-        "First Duty of Current Organization",
-        "Second Duty of Current Organization",
-        "Third Duty of Current Organization"
-      ]
-    },
-    {
-      "organization": "Previous Organization",
-      "position": "Position Two",
-      "url": "https://sample.com",
-      "start_date": "01/01/2010",
-      "end_date": "01/01/2020",
-      "summary": "Short summary about previous volunteer work",
-      "highlights": [
-        "First Duty of Previous Organization",
-        "Second Duty of Previous Organization",
-        "Third Duty of Previous Organization"
-      ]
-    }
-  ],
   "education": [
     {
-      "institution": "Institution One",
-      "location": "Institution One Location",
+      "institution": "University of Washington",
+      "location": "Seattle, Washington",
       "url": "https://sample.com",
       "degrees": [
-        "Master of Science in Computer Science",
-        "Minor in Mathematics"
+        "Bachelor  of Science in Electrical and Computer Engineering"
       ],
-      "honors": ["Outstanding Student Award", "Dean's List"],
-      "gpa_cumulative": "3.5",
-      "gpa_major": "4.0",
-      "graduation_date": "01/01/2005"
-    },
-    {
-      "institution": "Institution Two",
-      "location": "Institution Two Location",
-      "url": "https://sample.com",
-      "degrees": ["Bachelor of Science in Physics"],
-      "honors": ["Scholarship Recipient"],
-      "gpa_cumulative": "3.2",
-      "gpa_major": "3.9",
-      "graduation_date": "01/01/2000"
+      "honors": ["Dean's List"],
+      "gpa_cumulative": "3.62",
+      "graduation_date": "06/12/2026"
     }
   ],
   "skills": [
