@@ -7,12 +7,35 @@
     <meta name="description" content="Max Lan - Electrical and Computer Engineering student at UW-Seattle with experience in embedded systems, robotics, and firmware development.">
     <meta name="author" content="Max Lan">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="/icon2.ico"> <!-- Updated favicon path -->
+    <link rel="icon" href="/icon2.ico">
     <!-- Add Google Font Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
       body {
         font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .page-content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      main {
+        flex: 2;
+        padding-right: 20px;
+      }
+      aside {
+        flex: 1;
+        padding-left: 20px;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      .section-heading {
+        margin-top: 0;
       }
     </style>
   </head>
@@ -89,49 +112,32 @@
               </h3>
               <p class="section-label">07/01/2025 - Present</p>
               <p>I'll mainly develop hardware tests and firmware programs for computer cooling solutions, focusing on control systems and embedded software programming. Looking forward to this hands-on experience in thermal management technology.</p>
-              <!-- <ul>
-                <li>First Duty of Current Job</li>
-                <li>Second Duty of Current Job</li>
-                <li>Third Duty of Current Job</li>
-              </ul> -->
             </section>
-
-          </section>
           <section>
+
+            <section>
+            <h2 class="section-heading">Research Experience</h2>
+            <section>
+              <h3>
+                Undergraduate Researcher at <a href="https://www.ece.uw.edu/">Nanophotonics and Photonics Lab</a>
+              </h3>
+              <p class="section-label">09/24/2024 - Present</p>
+              <ul>
+                <li>Implemented I2C communication using OpenCore Wishbone interface in Verilog, enabling reliable data transfer between a TI board (TDC) and DE2-115 FPGA for a LiDAR prototype.</li>
+                <li>Developed SPI protocol for high-speed data exchange at 10 MHz, achieving zero data loss over 10,000+ bytes in FPGA-TI board communication for precise TDC data acquisition.</li>
+                <li>Built ROS2 navigation software, porting Visual-SLAM codebase from ROS1 to ROS2, enhancing path planning efficiency by 15% for LiDAR-guided robotic systems.</li>
+                <li>Designed comprehensive FPGA testbenches for I2C and SPI protocols, achieving 95% code coverage and detecting 20+ edge-case errors during validation.</li>
+                <li>Validated robust serial communication, reducing error rates by ~20% and supporting TDC data acquisition at 50 ps resolution in LiDAR applications.</li>
+              </ul>
+            </section>
+          <section>
+          
             <h2 class="section-heading">Projects</h2>
             <section>
               <h3>
                 <a href="https://github.com/huskyroboticsteam/CAN-Bridge">CAN Bridge</a>
               </h3>
               <p>Developed firmware for CAN packet ID translation between an ODrive S1 BLDC motor board and PSoC microcontrollers, enabling stable communication at 250 kbps. Implemented real-time protocol conversion, reducing latency by ~25% and error rates by ~20% using custom Python scripts. Configured robust hardware interfaces and collaborated on PCB design for reliable robotic applications.</p>
-              <!-- <ul>
-                <li>First Highlight of Project One</li>
-                <li>Second Highlight of Project One</li>
-                <li>Third Highlight of Project One</li>
-              </ul> -->
-              <div class="gallery main-gallery">
-                <!-- <figure>
-                  <img width="600"
-                       height="338"
-                       src="https://picsum.photos/600/338?random=1"
-                       alt="Image Caption 1">
-                  <figcaption>Image Caption 1</figcaption>
-                </figure> -->
-                <!-- <figure>
-                  <img width="600"
-                       height="338"
-                       src="https://picsum.photos/600/338?random=2"
-                       alt="Image Caption 2">
-                  <figcaption>Image Caption 2</figcaption>
-                </figure> -->
-                <!-- <figure>
-                  <img width="600"
-                       height="338"
-                       src="https://picsum.photos/600/338?random=3"
-                       alt="Image Caption 3">
-                  <figcaption>Image Caption 3</figcaption>
-                </figure> -->
-              </div>
             </section>
             <section>
               <h3>
@@ -145,29 +151,6 @@
                 <li>Developed FSM for game state transitions, verified with ModelSim testbenches, achieving 95% code coverage.</li>
                 <li>Utilized Intel Quartus for synthesis, leveraging 50% of Cyclone V memory (1.66 Mb) for smooth VGA rendering.</li>
               </ul>
-              <!-- <div class="gallery main-gallery">
-                <figure>
-                  <img width="600"
-                       height="338"
-                       src="https://picsum.photos/600/338?random=4"
-                       alt="Image Caption 4">
-                  <figcaption>Image Caption 4</figcaption>
-                </figure> -->
-                <!-- <figure>
-                  <img width="600"
-                       height="338"
-                       src="https://picsum.photos/600/338?random=5"
-                       alt="Image Caption 5">
-                  <figcaption>Image Caption 5</figcaption>
-                </figure> -->
-                <!-- <figure>
-                  <img width="600"
-                       height="338"
-                       src="https://picsum.photos/600/338?random=6"
-                       alt="Image Caption 6">
-                  <figcaption>Image Caption 6</figcaption>
-                </figure> -->
-              </div>
             </section>
           </section>
         </main>
@@ -176,7 +159,7 @@
             <h2 class="section-heading">Education</h2>
             <section>
               <h3>
-                <a href="https://sample.com">University of Washington</a>
+                <a href="https://www.ece.uw.edu/">University of Washington</a>
               </h3>
               <p class="section-label">Seattle, WA</p>
               <h4>Degrees</h4>
@@ -198,11 +181,11 @@
             <ul class="unstyled-list">
               <li>
                 <h3>Hardware Skills & Tools</h3>
-                <p class="section-label">Oscilloscopes, Logic Analyzers, PCB Design, Soldering, Altium Designer, KiCAD, Cadence Virtuoso, Verilog, SystemVerilog, CUDA, ModelSim, Xilinx Vivado, Intel Quartus Prime</p>
+                <p class="section-label">Oscilloscopes, Logic Analyzers, PCB Design, Soldering, Altium Designer, KiCAD, Cadence Virtuoso, Verilog, SystemVerilog, ModelSim, Xilinx Vivado, Intel Quartus Prime</p>
               </li>
               <li>
                 <h3>Software/Firmware Skills & Tools</h3>
-                <p class="section-label">Python, C, C++, Rust, Java, ARM/x86 Assembly, STM32, PsoC Infineon, Tiva C Series, ROS2, Full Stack Development, PostgreSQL</p>
+                <p class="section-label">Python, C, C++, Rust, Java, ARM/x86 Assembly, STM32, PsoC Infineon, Tiva C Series, ROS2, CUDA, Full Stack Development, PostgreSQL</p>
               </li>
             </ul>
           </section>
