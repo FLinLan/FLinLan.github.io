@@ -1,281 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Max Lan - Portfolio</title>
-    <meta name="description" content="Max Lan - Electrical and Computer Engineering student at UW-Seattle with experience in embedded systems, robotics, and firmware development.">
-    <meta name="author" content="Max Lan">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="/icon2.ico">
-    <!-- Add Google Font Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Montserrat', sans-serif;
-        margin: 0;
-        padding: 0;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Max Lan - Electrical and Computer Engineering @ UW</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin: 0 25px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #0066cc;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 60px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      margin-bottom: 40px;
+    }
+    
+    .header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    
+    .header p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .header-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .header-links a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 25px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+    
+    .header-links a:hover {
+      background: white;
+      color: #667eea;
+    }
+    
+    /* Sections */
+    section {
+      padding: 80px 0;
+      scroll-margin-top: 80px;
+    }
+    
+    h2.section-title {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #222;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2.section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #0066cc;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    
+    .profile-photo {
+      flex: 0 0 300px;
+    }
+    
+    .profile-photo img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .name {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    
+    .email {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    .intro {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+    
+    /* Experience Items */
+    .experience-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .experience-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .experience-header {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 25px;
+    }
+    
+    .experience-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .experience-company {
+      font-size: 18px;
+      margin-bottom: 5px;
+      opacity: 0.9;
+    }
+    
+    .experience-duration {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .experience-content {
+      padding: 25px;
+    }
+    
+    .experience-description {
+      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.7;
+    }
+    
+    .experience-highlights {
+      list-style: none;
+    }
+    
+    .experience-highlights li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+      color: #555;
+    }
+    
+    .experience-highlights li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    
+    /* Research Items */
+    .research-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .research-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .research-header {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+      padding: 25px;
+    }
+    
+    .research-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .research-authors {
+      font-size: 16px;
+      margin-bottom: 5px;
+      opacity: 0.9;
+    }
+    
+    .research-venue {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .research-content {
+      padding: 25px;
+    }
+    
+    .research-description {
+      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.7;
+    }
+    
+    .research-highlights {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    
+    .research-highlights li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+      color: #555;
+    }
+    
+    .research-highlights li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    
+    .research-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .research-link:hover {
+      background-color: #0052a3;
+    }
+    
+    /* Project Items */
+    .project-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-header {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: white;
+      padding: 25px;
+    }
+    
+    .project-title {
+      font-size: 22px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .project-type {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .project-content {
+      padding: 25px;
+    }
+    
+    .project-description {
+      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.7;
+    }
+    
+    .project-highlights {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    
+    .project-highlights li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+      color: #555;
+    }
+    
+    .project-highlights li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    
+    .project-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .project-link:hover {
+      background-color: #0052a3;
+    }
+    
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .skill-category {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .skill-category h3 {
+      color: #0066cc;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .skill-tag {
+      background-color: #f0f0f0;
+      color: #555;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
       }
-      .page-content {
-        display: flex;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      main {
-        flex: 2;
-        padding-right: 20px;
-      }
-      aside {
-        flex: 1;
-        padding-left: 20px;
-      }
-      section {
+      
+      .profile-photo {
+        flex: 0 0 auto;
+        max-width: 100%;
         margin-bottom: 20px;
       }
-      .section-heading {
-        margin-top: 0;
+      
+      .header h1 {
+        font-size: 2.5rem;
       }
-    </style>
-  </head>
-  <body>
-    <header class="page-header">
-      <div class="container">
-        <div class="header-top flex-responsive">
-          <img class="header-image"
-               width="256"
-               height="256"
-               src="img/IMG_3948.png"
-               alt="Max Lan Profile Image" />
-          <div class="header-info">
-            <h1>Max Lan</h1>
-            <h2 class="header-label">ECE @ UW-Seattle</h2>
-            <address>
-              <ul class="inline-list flex-responsive">
-                <li><a href="mailto:ml248@uw.edu">ml248@uw.edu</a></li>
-                <li><a href="tel:+1234567890">415-264-6023</a></li>
-                <li>Seattle, Washington, United States</li>
-              </ul>
-            </address>
-            <ul class="inline-list flex-responsive">
-              <li>
-                <a href="https://www.linkedin.com/in/fulinlan20/"
-                   rel="noopener noreferrer"
-                   aria-label="LinkedIn"
-                   class="link-with-icon">
-                  <svg aria-hidden="true"
-                       xmlns="http://www.w3.org/2000/svg"
-                       role="img"
-                       width="16"
-                       height="16"
-                       fill="currentColor"
-                       class="bi bi-linkedin"
-                       viewBox="0 0 16 16">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                  </svg>
-                  LinkedIn Account
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/FLinLan"
-                   rel="noopener noreferrer"
-                   aria-label="GitHub"
-                   class="link-with-icon">
-                  <svg aria-hidden="true"
-                       xmlns="http://www.w3.org/2000/svg"
-                       role="img"
-                       width="16"
-                       height="16"
-                       fill="currentColor"
-                       class="bi bi-github"
-                       viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                  </svg>
-                  GitHub Account
-                </a>
-              </li>
-              <li>
-                <a href="resume.pdf"
-                   rel="noopener noreferrer"
-                   aria-label="Resume"
-                   class="link-with-icon">
-                  <svg aria-hidden="true"
-                       xmlns="http://www.w3.org/2000/svg"
-                       role="img"
-                       width="16"
-                       height="16"
-                       fill="currentColor"
-                       class="bi bi-file-earmark-person"
-                       viewBox="0 0 16 16">
-                    <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
-                  </svg>
-                  Resume
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/@ecestuff"
-                   rel="noopener noreferrer"
-                   aria-label="YouTube Channel"
-                   class="link-with-icon">
-                  <svg aria-hidden="true"
-                       xmlns="http://www.w3.org/2000/svg"
-                       role="img"
-                       width="16"
-                       height="16"
-                       fill="currentColor"
-                       class="bi bi-youtube"
-                       viewBox="0 0 16 16">
-                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.010 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122l.008-.103c.065-.914.073-1.77.074-1.957v-.075c-.001-.194-.010-1.108-.082-2.06l-.008-.105-.009-.104c-.05-.572-.124-1.14-.235-1.558a2.007 2.007 0 0 1-1.415-1.42c-.101-.38-.172-.883-.22-1.402l-.011-.104a2.001 2.001 0 0 1 .22-1.39c.31-.478 1.026-.708 2.035-.718h.089c.822-.003 4.987-.033 6.11-.335a2.01 2.01 0 0 1 1.415-1.42c.887-.215 2.112-.227 2.654-.26zM8 4.754v6.492L12.362 8 8 4.754z"/>
-                  </svg>
-                  YouTube Channel
-                </a>
-              </li>
-            </ul>
-            <p class="header-summary">I’m a junior at the University of Washington studying Electrical and Computer Engineering. I’m interested in embedded systems and digital VLSI, with experience in robotics, FPGA, and firmware development. I work on embedded systems and communication protocols as a Firmware Developer at Husky Robotics. In Professor Mo Li’s lab, I research visual SLAM using ROS2 and help connect FPGAs to microcontrollers. My skills range from low-level firmware to cross-platform development. Feel free to contact me at ml248@uw.edu.</p>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="page-content">
-      <div class="container">
-        <main>
-          <section>
-            <h2 class="section-heading">Work Experience</h2>
-            <section>
-              <h3>
-                Firmware Engineering Intern at <a href="https://www.avc.co/en-us/">Asia Vital Components</a>
-              </h3>
-              <p class="section-label">07/01/2025 - Present</p>
-              <p>I'll mainly develop hardware tests and firmware programs for computer cooling solutions, focusing on control systems and embedded software programming. Looking forward to this hands-on experience in thermal management technology.</p>
-            </section>
-          <section>
-
-            <section>
-            <h2 class="section-heading">Research Experience</h2>
-            <section>
-              <h3>
-                Undergraduate Researcher at <a href="https://www.ece.uw.edu/">Nanophotonics and Photonics Lab</a>
-              </h3>
-              <p class="section-label">09/28/2024 - Present</p>
-              <ul>
-                <li>Implemented I2C communication using OpenCore Wishbone interface in Verilog, enabling reliable data transfer between a TI board (TDC) and DE2-115 FPGA for a LiDAR prototype.</li>
-                <li>Developed SPI protocol for high-speed data exchange at 10 MHz, achieving zero data loss over 10,000+ bytes in FPGA-TI board communication for precise TDC data acquisition.</li>
-                <li>Built ROS2 navigation software, porting Visual-SLAM codebase from ROS1 to ROS2, enhancing path planning efficiency by 15% for LiDAR-guided robotic systems.</li>
-                <li>Designed comprehensive FPGA testbenches for I2C and SPI protocols, achieving 95% code coverage and detecting 20+ edge-case errors during validation.</li>
-                <li>Validated robust serial communication, reducing error rates by ~20% and supporting TDC data acquisition at 50 ps resolution in LiDAR applications.</li>
-              </ul>
-            </section>
-
-              <section>
-              <h3>
-                Electronics Team Member at <a href="https://github.com/huskyroboticsteam">Husky Robotics</a>
-              </h3>
-              <p class="section-label">09/28/2022 - Present</p>
-              <ul>
-                <li>Implemented servo, sensor, and LED functionalities using several serial communication protocols (CAN, I2C, SPI).</li>
-                <li>Developed and optimized firmware in PSoC Creator and STM32CubeIDE, ensuring efficient system functionality.</li>
-                <li>Debugged PCBs using UART, PuTTY, and Picoscope to identify and resolve signal communication integrity issues.</li>
-                <li>Collaborated with the hardware team to review Altium-365 schematics and optimize firmware for PCB designs.</li>
-              </ul>
-            </section>
-          <section>
-          
-          
-            <h2 class="section-heading">Projects</h2>
-            <section>
-              <h3>
-                <a href="https://github.com/huskyroboticsteam/CAN-Bridge">CAN Bridge</a>
-              </h3>
-              <p>Developed firmware for CAN packet ID translation between an ODrive S1 BLDC motor board and PSoC microcontrollers, enabling stable communication at 250 kbps. Implemented real-time protocol conversion, reducing latency by ~25% and error rates by ~20% using custom Python scripts. Configured robust hardware interfaces and collaborated on PCB design for reliable robotic applications.</p>
-            </section>
-            <section>
-              <h3>
-                <a href="https://github.com/FLinLan">FPGA Taiko No Tatsujin</a>
-              </h3>
-              <ul>
-                <li>Designed an FPGA-based rhythm game on DE1-SoC using Verilog, integrating VGA display and 7-segment score output for real-time gameplay.</li>
-                <li>Implemented note animation with 16-bit hex file reads at 3 Hz, achieving 100% rhythm accuracy for 130 frames.</li>
-                <li>Optimized collision detection logic, reducing input-to-score latency to 1 ms via one-hot encoded 16-bit frame checks.</li>
-                <li>Developed FSM for game state transitions, verified with ModelSim testbenches, achieving 95% code coverage.</li>
-                <li>Utilized Intel Quartus for synthesis, leveraging 50% of Cyclone V memory (1.66 Mb) for smooth VGA rendering.</li>
-              </ul>
-            </section>
-
-             <section>
-              <h3>
-                <a href="https://github.com/FLinLan/Plant-Monitoring-System">Plant Monitoring System</a>
-              </h3>
-              <ul>
-                <li>Built a smart plant monitoring system using an ESP32 microcontroller to interface with soil moisture, DHT22 (temperature/humidity), and light sensors for autonomous environmental tracking.</li>
-                <li>Developed C++ firmware using the Arduino framework to process real-time sensor data and control actuators like water pumps via GPIO and relay modules.</li>
-                <li>Implemented I2C and ADC-based peripheral communication, enabling accurate 10-bit moisture level sampling and humidity sensing with ±2% precision.</li>
-                <li>Integrated OLED display and UART-based serial debugging for local feedback and real-time status updates during development and deployment.</li>
-                <li>Enabled Wi-Fi-based data transmission to Blynk dashboard, supporting remote monitoring and notifications with secure cloud connectivity.</li>
-              </ul>
-            </section>
-          </section>
-        </main>
-        <aside>
-          <section>
-            <h2 class="section-heading">Education</h2>
-            <section>
-              <h3>
-                <a href="https://www.ece.uw.edu/">University of Washington</a>
-              </h3>
-              <p class="section-label">Seattle, WA</p>
-              <h4>Degrees</h4>
-              <ul>
-                <li>BE in Electrical and Computer Engineering</li>
-              </ul>
-              <h4>Honors</h4>
-              <ul>
-                <li>Dean's List (Autumn 2022, Autumn 2023 - Spring 2025)</li>
-              </ul>
-              <p>
-                <span class="block">GPA in Major: 3.7</span>
-                <span class="block">Graduation Date: 06/12/2026</span>
-              </p>
-            </section>
-          </section>
-          <section>
-            <h2 class="section-heading">Skills</h2>
-            <ul class="unstyled-list">
-              <li>
-                <h3>Hardware Skills & Tools</h3>
-                <p class="section-label">Oscilloscopes, Logic Analyzers, PCB Design, Soldering, Altium Designer, KiCAD, Cadence Virtuoso, Verilog, SystemVerilog, ModelSim, Xilinx Vivado, Intel Quartus Prime</p>
-              </li>
-              <li>
-                <h3>Firmware Skills & Tools</h3>
-                <p class="section-label">C, C++, Rust, ARM/x86 Assembly, STM32, Infineon PSoC, Tiva C Series, ESP32, FreeRTOS, Embedded Linux, SWD/JTAG Debugging, Git, GDB</p>
-              </li>
-              <li>
-                <h3>Software Skills & Tools</h3>
-                <p class="section-label">Python, Java, MATLAB, ROS2, CUDA, Docker, PostgreSQL, Full Stack Development, Linux, Bash Shell Scripting, Git</p>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2 class="section-heading">Languages</h2>
-            <ul class="unstyled-list">
-              <li>
-                <h3>English</h3>
-                <p class="section-label">Native speaker</p>
-              </li>
-              <li>
-                <h3>Mandarin</h3>
-                <p class="section-label">Native speaker</p>
-              </li>
-            </ul>
-          </section>
-        </aside>
+      
+      .header-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Header -->
+  <div class="header">
+    <div class="container">
+      <h1>Max Lan</h1>
+      <p>Electrical and Computer Engineering Student</p>
+      <p> B.S. Student at University of Washington | Embedded Systems and Digital VLSI</p>
+      <div class="header-links">
+        <a href="mailto:ml248@uw.edu">Email</a>
+        <a href="https://www.linkedin.com/in/fulinlan20/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/FLinLan" target="_blank">GitHub</a>
+        <a href="resume/resume.pdf" target="_blank">Resume</a>
       </div>
     </div>
-    <footer class="page-footer">
-      <div class="container">
-        <p>© 2025 Max Lan. All rights reserved.</p>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+        <div class="profile-photo">
+          <img src="pictures/profile-picture.jpg" alt="Max Lan">
+        </div>
+        <div class="about-text">
+          <h1 class="name">Max Lan</h1>
+          <a href="mailto:ml248@uw.edu" class="email">ml248@uw.edu</a>
+          <p class="intro">
+            I am currently a Bachelor's student in Electrical and Computer Engineering at the University of Washington, conducting research under the professor Mo Li in Nanophotonics and Photonics Lab, and professor Ang Li in PNCEL. My research focuses on the practical application for field programmable gate arrays in LiDAR and GPU applications.
+          </p>
+          <p class="intro">
+            I have experience as a Firmware Engineering Intern at Asia Vital Components Co.Ltd, specifically working with control systems firmware in optimizing BLDC/PMSM motor performance. Apart from that, I'm also involved in University of Washington's Husky Robotics Club, where I also worked closely with firmware and embedded systems.
+          </p>
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <!-- Husky Robotics -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3 class="experience-title">Embedded Systems Developer</h3>
+          <div class="experience-company">Husky Robotics</div>
+          <div class="experience-duration">Oct 2022 - Present, Student Organization | Seattle, Washington, US</div>
+        </div>
+        <div class="experience-content">
+          <p class="experience-description">
+          </p>
+          <ul class="experience-highlights">
+            <li>Configured CAN communication between ODrive S1 and PSoC MCU PCB designed by the hardware team, defining custom protocols for reliable data exchange with 500 kbps baud rate.</li>
+            <li>Scripted custom Python frameworks with pytest for control model simulations, CAN packet transmission, and camera sensor control, handling up to 100 packets per second.</li>
+            <li>Developed firmware on PSoC Infineon ARM Cortex to test servo and stepper motor functionality using PWM, achieving precise control over position, velocity, and torque within 5% error margin.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Asia Vital Components Co.Ltd. -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3 class="experience-title">Firmware Engineering Intern</h3>
+          <div class="experience-company">Asia Vital Components Co.Ltd.</div>
+          <div class="experience-duration">Jul 2025 - Sep 2025, Internship | Taipei, Taiwan</div>
+        </div>
+        <div class="experience-content">
+          <p class="experience-description">
+          </p>
+          <ul class="experience-highlights">
+            <li>Researched and analyzed FOC, 6-step commutation, and sensorless estimation algorithms for BLDC/PMSM efficiency in ODrive 0.5.6 codebase; presented findings and built/flashed firmware on legacy STM32F4 ODrive v3.6 boards.</li>
+            <li>Implemented CAN 2.0B stack with 500 kbps transmission, retry mechanism, and error handling via STM32 bxCAN; configured UART on serial console at 115200 bps to send CAN packets.</li>
+            <li>Developed Mongoose HTTP server with WebSocket for 1kHz real-time ADC/PWM/UART data on NUCLEO-H563ZI via Ethernet; utilized REST API for state reflection and firmware upgrades.</li>
+          </ul>
+        </div>
+      </div>
+      
+    </section>
+    
+    <!-- Research Section -->
+    <section id="research">
+      <h2 class="section-title">Research</h2>
+
+      <!-- Research 1 -->
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="research-title">Undergraduate Researcher @ PNCEL</h3>
+          <div class="research-venue">Jun 2025 - Present</div>
+        </div>
+        <div class="research-content">
+          <p class="research-description">
+          </p>
+          <ul class="research-highlights">
+            <li>Coming Soon</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Research 2 -->
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="research-title">Undergraduate Researcher @ Nanophotonics and Photonics Lab</h3>
+          <div class="research-venue">Oct 2024 - Present</div>
+        </div>
+        <div class="research-content">
+          <p class="research-description">
+          </p>
+          <ul class="research-highlights">
+            <li> Executed ROS ecosystem migration of VINS-Fusion SLAM navigation stack from ROS1 to ROS2, resolving package dependencies and refactoring publisher/subscriber architecture.</li>
+            <li> Modified Wishbone-compliant I2C controller IP core with multi-master arbitration, integrated with Intel NIOS II soft processor for FPGA-based sensor fusion applications.</li>
+            <li>Designed high-speed communication interfaces (UART, I2C, SPI) between TI TDC7200 Time-to-Digital Converter and DE2-115 Cyclone IV FPGA for peripheral applications.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      
+      <!-- Project 1 -->
+      <div class="project-item">
+        <div class="project-header">
+          <h3 class="project-title">FPGA Taiko No Tatsujin</h3>
+          <div class="project-type">Digital Logic Design Project</div>
+        </div>
+        <div class="project-content">
+          <p class="project-description">
+            Developed and implemented a digital logic design for an FPGA-based rhythm game controller, focusing on real-time input processing and low-latency output generation.
+          </p>
+          <ul class="project-highlights">
+            <li> Developed FPGA-based rhythm game on DE1-SoC, rendering scrolling red notes from ROM-preloaded frames synchronized to song rhythm via VGA display.</li>
+            <li>Implemented algorithmic state machine, key input synchronization with edge detection, and combinatorial collision detection for scoring on 7-segment displays.</li>
+            <li> Utilized PLL-generated 25 MHz clock for VGA timing and divided 50 MHz clock to 6 Hz for frame updates; simulated FSM and display logic in ModelSim waveforms.</li>
+          </ul>
+          <a href="https://drive.google.com/file/d/1H1FedIFB0RMM9VO6MSFNE65dmaghNY7j/view?usp=sharing" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-item">
+        <div class="project-header">
+          <h3 class="project-title">Five-Stage Pipelined ARM CPU</h3>
+          <div class="project-type">Computer Architecture and CPU Design Project</div>
+        </div>
+        <div class="project-content">
+          <p class="project-description">
+            Developed a five-stage pipelined ARM CPU architecture, implementing key components such as instruction fetch, decode, execute, memory access, and write-back stages.
+          </p>
+          <ul class="project-highlights">
+            <li>Designed and implemented a 64-bit pipelined processor with a five-stage architecture (IF, ID, EX, MEM, WB) using SystemVerilog, supporting LEGv8 instruction set with register file, ALU, and memory operations.</li>
+            <li>Implemented data forwarding and hazard detection logic to resolve pipeline dependencies, along with branch prediction state machines to minimize control and data hazards.</li>
+            <li>Validated functionality through SystemVerilog testbenches and ModelSim simulation for debugging and verification.</li>
+          </ul>
+          <a href="https://drive.google.com/file/d/1SbnJh1sSKhcntg9cemAAMx4J74AGYNim/view?usp=sharing" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
+      
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">SystemVerilog</span>
+            <span class="skill-tag">Verilog</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">ARM/x86 Assembly</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Hardware Skills and Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Oscilloscopes</span>
+            <span class="skill-tag">Logic Analyzer</span>
+            <span class="skill-tag">PCB Design</span>
+            <span class="skill-tag">IC Layout</span>
+            <span class="skill-tag">Soldering</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Software Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">STM32CubeIDE</span>
+            <span class="skill-tag">Infineon PSoC Creator</span>
+            <span class="skill-tag">ROS2</span>
+            <span class="skill-tag">Intel Quartus</span>
+            <span class="skill-tag">ModelSim</span>
+            <span class="skill-tag">Xilinx Vivado</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">PuTTY</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">GDB</span>
+            <span class="skill-tag">LTSpice</span>
+            <span class="skill-tag">Cadence Virtuoso</span>
+            <span class="skill-tag">FreeRTOS</span>
+            <span class="skill-tag">Altium Designer</span>
+            <span class="skill-tag">KiCAD</span>
+
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+  
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
 </html>
