@@ -1,13 +1,31 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: 5-Transistor Operational Transconductance Amplifier (OTA)
+description: Analog circuit design in Cadence Virtuoso with frequency response optimization
+img: assets/img/14.jpg
+importance: 4
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
+## Project Overview
+
+Designed a 5-transistor operational transconductance amplifier in Cadence Virtuoso, achieving a DC gain of 10V/V and a closed-loop gain of 4V/V at high frequency (100MHz) for an inverting amplifier topology.
+
+## Design Specifications
+
+- **Configuration:** 5-transistor OTA design
+- **DC Gain:** 10V/V
+- **Closed-loop Gain:** 4V/V at 100MHz (inverting amplifier)
+- **Design Tool:** Cadence Virtuoso
+- **Simulation Tools:** ADE Explorer, Spectre
+
+## Accomplishments
+
+- Designed a 5-transistor operational transconductance amplifier in Cadence Virtuoso
+- Achieved DC gain of 10V/V and closed-loop gain of 4V/V at high frequency (100MHz) for an inverting amplifier topology
+- Utilized ADE Explorer for comprehensive frequency response analysis and parameter optimization
+- Employed Spectre simulator and Assembler for detailed transient and AC analysis
+- Optimized circuit performance through systematic parameter tuning and simulation validation
 It's easy to include images in a flexible 3-column grid format.
 Make your photos 1/3, 2/3, or full width.
 
