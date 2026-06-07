@@ -31,6 +31,7 @@ I am a graduating Electrical and Computer Engineering (ECE) student at the Unive
 ## Research Interests
 
 My research and project experience centers on:
+
 - **Digital VLSI Design**: Custom IC layout, circuit optimization, and parasitic analysis
 - **Embedded Systems**: Microcontroller programming, communication protocols (UART, SPI, CAN), and hardware-software integration
 - **Analog Circuit Design**: Operational amplifiers, impedance matching, and RF design
@@ -39,6 +40,7 @@ My research and project experience centers on:
 ## Experience Highlights
 
 **Professional Experience:**
+
 - **Embedded Systems Engineer** at Delta Electronics (Internship)
 - **Research Assistant** at National Cheng Kung University
 - **Teaching Assistant** at University of Washington - Supported instruction in semiconductor devices and photonics
@@ -46,6 +48,7 @@ My research and project experience centers on:
 - **Electronics Team Member** at Husky Robotics - Motor control and robotic systems integration
 
 **Key Projects:**
+
 - Designed and implemented a 64-bit pipelined ARM CPU with LEGv8 instruction set support
 - Developed a 4.5 GHz microstrip patch antenna array with RF analysis in Ansys HFSS
 - Created a custom 16-bit register file IC layout achieving top 3 PPA ranking
