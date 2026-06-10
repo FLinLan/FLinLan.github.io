@@ -6,24 +6,20 @@ subtitle: Electrical & Computer Engineer | Embedded Systems & Digital VLSI | Uni
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: maxlan_profile.jpg
   image_circular: false
   more_info: >
     <p>Seattle, Washington</p>
     <p>Email: ml248@uw.edu</p>
 
 selected_papers: false
-social: true
+social: false
 
 announcements:
-  enabled: true
-  scrollable: true
-  limit: 5
+  enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true
-  limit: 3
+  enabled: false
 ---
 
 I am a graduating Electrical and Computer Engineering (ECE) student at the University of Washington, specializing in Embedded Systems and Digital VLSI design. My academic focus spans across analog circuit design, digital hardware implementation, and embedded systems development.
