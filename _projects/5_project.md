@@ -5,7 +5,10 @@ description: FPGA-based rhythm game with synchronized VGA display and state mach
 img: assets/img/1.jpg
 importance: 5
 category: work
+github: https://github.com/FLinLan/FPGA-Taiko-No-Tatsujin
 ---
+
+**[View on GitHub](https://github.com/FLinLan/FPGA-Taiko-No-Tatsujin)**
 
 ## Project Overview
 

@@ -5,7 +5,10 @@ description: Analog circuit design in Cadence Virtuoso with frequency response o
 img: assets/img/14.jpg
 importance: 4
 category: work
+github: https://github.com/FLinLan/5T-OTA
 ---
+
+**[View on GitHub](https://github.com/FLinLan/5T-OTA)**
 
 ## Project Overview
 

@@ -5,7 +5,10 @@ description: Programmable signal processing board with STM32 MCU control and rea
 img: assets/img/15.jpg
 importance: 6
 category: work
+github: https://github.com/FLinLan/PGA-Loop-Controller-Board
 ---
+
+**[View on GitHub](https://github.com/FLinLan/PGA-Loop-Controller-Board)**
 
 ## Project Overview
 

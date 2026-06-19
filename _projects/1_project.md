@@ -5,7 +5,10 @@ description: SystemVerilog implementation of a 64-bit pipelined processor with L
 img: assets/img/12.jpg
 importance: 1
 category: work
+github: https://github.com/evanzhaodev/CSE_EE-469-Labs
 ---
+
+**[View on GitHub](https://github.com/evanzhaodev/CSE_EE-469-Labs)**
 
 ## Overview
 
