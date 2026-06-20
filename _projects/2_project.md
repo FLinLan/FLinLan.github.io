@@ -2,7 +2,7 @@
 layout: page
 title: 4.5 GHz 2×2 Microstrip Patch Antenna Array
 description: RF antenna design with impedance matching and far-field analysis in Ansys HFSS
-img: assets/img/3.jpg
+img: assets/img/patch_array_antenna.jpeg
 importance: 2
 category: work
 github: https://github.com/FLinLan/4.5-GHz-2x2-Microstrip-Patch-Antenna-Array

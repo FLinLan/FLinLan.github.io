@@ -2,7 +2,7 @@
 layout: page
 title: Controllable Feedback/Feedforward Loop Board
 description: Programmable signal processing board with STM32 MCU control and real-time feedback
-img: assets/img/15.jpg
+img: assets/img/loop_controller_board.jpg
 importance: 6
 category: work
 github: https://github.com/FLinLan/PGA-Loop-Controller-Board

@@ -2,7 +2,7 @@
 layout: page
 title: 64-bit Five-Stage Pipelined ARM CPU
 description: SystemVerilog implementation of a 64-bit pipelined processor with LEGv8 instruction set
-img: assets/img/12.jpg
+img: assets/img/arm_cpu.png
 importance: 1
 category: work
 github: https://github.com/evanzhaodev/CSE_EE-469-Labs

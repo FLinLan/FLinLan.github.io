@@ -2,7 +2,7 @@
 layout: page
 title: FPGA Taiko No Tatsujin Rhythm Game
 description: FPGA-based rhythm game with synchronized VGA display and state machine logic
-img: assets/img/1.jpg
+img: assets/img/fpga_taiko.png
 importance: 5
 category: work
 github: https://github.com/FLinLan/FPGA-Taiko-No-Tatsujin

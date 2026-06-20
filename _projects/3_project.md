@@ -2,7 +2,7 @@
 layout: page
 title: 16x13 Register File Layout Design
 description: Custom IC layout design in Cadence Virtuoso with HSPICE verification achieving top 3 PPA ranking
-img: assets/img/maxlan_profile.jpg
+img: assets/img/register_file.png
 importance: 3
 category: work
 github: https://github.com/SZ330/Register-File-Layout

@@ -2,7 +2,7 @@
 layout: page
 title: 5-Transistor Operational Transconductance Amplifier (OTA)
 description: Analog circuit design in Cadence Virtuoso with frequency response optimization
-img: assets/img/14.jpg
+img: assets/img/OTA.png
 importance: 4
 category: work
 github: https://github.com/FLinLan/5T-OTA
